@@ -15,7 +15,7 @@ There are alternate names for the terminal including; console, shell, command li
 
 ##The beginning
 
-The following tutorial is talored to the Mac and Linux terminals.
+The following tutorial is tailored to the Mac and Linux terminals.
 
 You will need to open up the terminal;
 * On a Mac or Linux machine just use the standard terminal program.
@@ -38,10 +38,10 @@ Quick note easy_install, pip, and brew are all package managers that allow you t
 ### When you have trouble installing
 
 There could be a number of issues;
-* dependancies
-* permisions
+* dependencies
+* permissions
 
-With dependancies, you should google the specific error. Perhaps you already have somethings installed, perhaps you need to upgrade, perhaps your operating system has a specific issue. [Stackoverflow](http://stackoverflow.com/) is a good place to get answers.
+With dependencies, you should 'oogle the specific error. Perhaps you already have somethings installed, perhaps you need to upgrade, perhaps your operating system has a specific issue. [Stackoverflow](http://stackoverflow.com/) is a good place to get answers.
 
 Permissions can be a bit more confusing. All the commands we have shown so far are run with permissions that you (the default user) have. Sometimes this isn't enough and you need to run with bigger, grander permissions. Like a super hero, or in this case a super user (also known as root).
 
@@ -54,13 +54,13 @@ TODO: explain this
 ##Getting all the data
 There have been a lot of tutorials on scraping, getting data out of documents and freedom of information requests.
 
-For this exercise I grabbed all the tweets relating to the #dataharvest16 twitter handle and popped them into a CSV file using a tool called [T](https://github.com/sferik/t). [And a tutorial we don't have time for](https://gist.github.com/dannguyen/7c592c4559ee64f753e5)
+For this exercise I grabbed all the tweets relating to the #dataharvest16 twitter handle and popped them into a CSV file using a tool called [T](https://github.com/sferik/t). [Which has it's own tutorial we don't have time for](https://gist.github.com/dannguyen/7c592c4559ee64f753e5)
 
 ```sh
 $ t search all 'EIJC16' --csv -n 3200 > Dataharvest16tweets.csv
 ```
 
-This is how I'll write commands in this tutorial. These are the commands we will pop into the tutorial in order to process our data.
+This is how I'll write commands in this tutorial. These are the commands we will pop into the terminal in order to do stuff, like processing our data.
 
 Don't worry if you don't have a CSV, you can convert to one
 
@@ -68,14 +68,17 @@ Don't worry if you don't have a CSV, you can convert to one
 in2csv input_file.xls output_file.csv
 ```
 
-##How will you get the data?
+## Moving around
 
-Getting our data (or [whole sites](http://www.linuxjournal.com/content/downloading-entire-web-site-wget))
+When you open your terminal you'll be somewhere - but where is that?
 
 ```sh
-$ wget https://github.com/arc64/dataharvest-2016-commandline/blob/master/dataharvest16tweets.csv
+$ pwd
 ```
-You may find you don't have wget installed. To install it, the easiest way is with another package manager called [Homebrew](http://brew.sh/). And then run ``` $ brew install wget ```
+
+Will show you the path that you are in right now.
+
+TODO: mkdir, cd, navigation
 
 List the shizzle in your directory. Command first and options after. List. All. With readable file sizes.
 
@@ -90,6 +93,18 @@ Don't know what a command does?
 ```sh
 $ man ls
 ```
+
+## How will you get the data?
+
+You will use wget to the file with out data (or [whole sites](http://www.linuxjournal.com/content/downloading-entire-web-site-wget))
+
+```sh
+$ wget https://github.com/arc64/dataharvest-2016-commandline/blob/master/dataharvest16tweets.csv
+```
+You may find you don't have wget installed. To install it, the easiest way is with another package manager called [Homebrew](http://brew.sh/). And then run ``` $ brew install wget ```
+
+If you don't feel like installing the fabulous tool wget, just grab the file (click raw in github), and put it into the directory where you want to use it.
+
 
 ## So what does the file look like?
 
@@ -106,7 +121,7 @@ Or lines
 wc -l README.md
 ```
 
-In a CSV though we want to cound the number of rows
+In a CSV though we want to count the number of rows
 
 ```sh
 csvstat --count dataharvest16tweets.csv
