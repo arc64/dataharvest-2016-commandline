@@ -9,14 +9,18 @@ What is this terminal thing you ask? And why do we want to use it?
 * An inexplicable reason your file does not open in your chosen spreadsheet program...
 * There is power here. Grab bits of the internet, manipulate them quickly, and pop them into files or databases without needing to learn the complexities of coding.
 
+The terminal is a text based interface that allows you to run text commands and interact with your file system.
+
+There are alternate names for the terminal including; console, shell, command line, command prompt.
+
 ##The beginning
 
-These commands work on Mac and Linux.
+The following tutorial is talored to the Mac and Linux terminals.
 
-When windows please install Cygwin in order use the same commands:
-[Cygwin (Unix emulator)](https://cygwin.com/install.html) - https://cygwin.com/install.html
-Please make sure when installing that Python
-and then you will need to install csvkit.
+You will need to open up the terminal;
+* On a Mac or Linux machine just use the standard terminal program.
+* If you have a windows machine please install Cygwin (a Unix terminal emulator) in order use the same commands as this tutorial - [Cygwin (Unix emulator)](https://cygwin.com/install.html) - https://cygwin.com/install.html
+
 
 For those on Linux or Mac go right ahead and install csvkit for the last part of the tutorial:
 ```sh
@@ -43,7 +47,9 @@ Permissions can be a bit more confusing. All the commands we have shown so far a
 
 ``` $ sudo <your command> ```
 
-Be careful though, there are some ramifications to doing this
+Be careful though, there are some ramifications to doing this.
+
+TODO: explain this
 
 ##Getting all the data
 There have been a lot of tutorials on scraping, getting data out of documents and freedom of information requests.
@@ -64,7 +70,7 @@ in2csv input_file.xls output_file.csv
 
 ##How will you get the data?
 
-Getting our data (or [whole sites](http://www.linuxjournal.com/content/downloading-entire-web-site-wget)
+Getting our data (or [whole sites](http://www.linuxjournal.com/content/downloading-entire-web-site-wget))
 
 ```sh
 $ wget https://github.com/arc64/dataharvest-2016-commandline/blob/master/dataharvest16tweets.csv
@@ -77,7 +83,7 @@ List the shizzle in your directory. Command first and options after. List. All. 
 $ ls -alk
 ```
 
-Notice that there is your username or perhaps other usernames (like root) listed. These are the creators of the files, and the letters on the very left are [permissions](https://en.wikipedia.org/wiki/File_system_permissions) (i.e -rw-r--r--).
+Notice that there is your username or perhaps other usernames (like root) listed. These are the owners of the files, and the letters on the very left are [permissions](https://en.wikipedia.org/wiki/File_system_permissions) (i.e -rw-r--r--).
 
 Don't know what a command does?
 
