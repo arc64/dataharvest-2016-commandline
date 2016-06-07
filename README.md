@@ -15,12 +15,35 @@ These commands work on Mac and Linux.
 
 When windows please install Cygwin in order use the same commands:
 [Cygwin (Unix emulator)](https://cygwin.com/install.html) - https://cygwin.com/install.html
+Please make sure when installing that Python
+and then you will need to install csvkit.
 
-You will also need to install csvkit for the last part of the tutorial:
+For those on Linux or Mac go right ahead and install csvkit for the last part of the tutorial:
 ```sh
 $ easy_install pip
 $ pip install csvkit
 ```
+
+### What are those commands? Package management
+
+Quick note easy_install, pip, and brew are all package managers that allow you to install what we need from the command line. Rather than downloading and trying to install and configure them yourself.
+
+* [easy_install](https://en.wikipedia.org/wiki/Setuptools) is a package manager to install Python packages, however it isn't a fully fledged one. Pip however is, so first we install easy_install and then pip.
+* [pip](https://en.wikipedia.org/wiki/Pip_(package_manager)) is another Python package manager. A lot of these packages are on the [Python Package Index](https://en.wikipedia.org/wiki/Python_Package_Index) (PyPI)
+
+### When you have trouble installing
+
+There could be a number of issues;
+* dependancies
+* permisions
+
+With dependancies, you should google the specific error. Perhaps you already have somethings installed, perhaps you need to upgrade, perhaps your operating system has a specific issue. [Stackoverflow](http://stackoverflow.com/) is a good place to get answers.
+
+Permissions can be a bit more confusing. All the commands we have shown so far are run with permissions that you (the default user) have. Sometimes this isn't enough and you need to run with bigger, grander permissions. Like a super hero, or in this case a super user (also known as root).
+
+``` $ sudo <your command> ```
+
+Be careful though, there are some ramifications to doing this
 
 ##Getting all the data
 There have been a lot of tutorials on scraping, getting data out of documents and freedom of information requests.
@@ -46,12 +69,15 @@ Getting our data (or [whole sites](http://www.linuxjournal.com/content/downloadi
 ```sh
 $ wget https://github.com/arc64/dataharvest-2016-commandline/blob/master/dataharvest16tweets.csv
 ```
+You may find you don't have wget installed. To install it, the easiest way is with another package manager called [Homebrew](http://brew.sh/). And then run ``` $ brew install wget ```
 
 List the shizzle in your directory. Command first and options after. List. All. With readable file sizes.
 
 ```sh
 $ ls -alk
 ```
+
+Notice that there is your username or perhaps other usernames (like root) listed. These are the creators of the files, and the letters on the very left are [permissions](https://en.wikipedia.org/wiki/File_system_permissions) (i.e -rw-r--r--).
 
 Don't know what a command does?
 
